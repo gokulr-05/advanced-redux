@@ -1,0 +1,24 @@
+.products-area {
+  margin: 100px 0px;
+}
+
+.products-sec {
+  width: 60%;
+  margin: 20px auto;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+.products-inner-sec-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

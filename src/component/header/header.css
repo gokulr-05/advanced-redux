@@ -1,0 +1,14 @@
+.header-area {
+  background-color: black;
+  color: white;
+  /* height: 100px; */
+  padding: 10px;
+}
+
+.header-sec {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

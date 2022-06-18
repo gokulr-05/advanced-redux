@@ -1,0 +1,26 @@
+.cart-sec {
+  width: 50%;
+  margin: 100px auto;
+  padding: 10px;
+  border-radius: 10px;
+
+  background-color: black;
+  color: white;
+}
+
+.inner-cart-sec-1 {
+  width: 90%;
+  margin: 20px auto;
+  background-color: darkslategrey;
+  padding: 20px;
+}
+
+.inner-cart-sec-2 {
+  width: 90%;
+  margin: 20px auto;
+  background-color: darkslategrey;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
