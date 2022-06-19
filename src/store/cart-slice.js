@@ -36,6 +36,21 @@ let cartSlice = createSlice({
         existingItem.totalPrice = existingItem.totalPrice + existingItem.price;
       }
     },
+    removeItem: (state, action) => {
+      let [item] = state.items.filter((val) => {
+        return val.id === action.payload.id;
+      });
+
+      let qty = item.quantity;
+      if (qty === 1) {
+        state.items = state.items.filter((val) => {
+          return val.id !== action.payload.id;
+        });
+      } else {
+        --item.quantity;
+        item.totalPrice = item.totalPrice - item.price;
+      }
+    },
   },
 });
 
