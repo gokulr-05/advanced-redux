@@ -4,6 +4,12 @@ let cartSlice = createSlice({
   name: "cartSlice",
   initialState: { items: [], totalQuantity: 0 },
   reducers: {
+    replaceItem: (state, action) => {
+      console.log("items in replaceItem: ", action.payload);
+      state.items = action.payload.items;
+      state.totalQuantity = action.payload.totalQuantity;
+    },
+
     addItem: (state, action) => {
       console.log(state.items, state.totalQuantity);
       console.log(action);
