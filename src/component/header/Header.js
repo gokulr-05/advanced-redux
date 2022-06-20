@@ -4,6 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import uiSlice from "../../store/ui-slice";
 
 const Header = () => {
+  let totalqty = useSelector((state) => {
+    return state.cartSliceReducer.totalQuantity;
+  });
   let dispatch = useDispatch();
   let uiSliceActions = uiSlice.actions;
 
@@ -27,7 +30,7 @@ const Header = () => {
           >
             My Cart{" "}
             <span className="badge rounded-pill text-bg-primary px-3 py-2">
-              0
+              {totalqty}
             </span>
           </button>
         </div>

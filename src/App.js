@@ -14,6 +14,9 @@ let count = 1;
 
 function App() {
   let dispatch = useDispatch();
+  let isChanged = useSelector((state) => {
+    return state.cartSliceReducer.isChanged;
+  });
   let cartItems = useSelector((state) => {
     return state.cartSliceReducer.items;
   });
@@ -32,12 +35,15 @@ function App() {
       );
 
       let data = await response.json();
+      let totQty = data.items.reduce((tot, val) => {
+        return tot + val.quantity;
+      }, 0);
 
       console.log("data=", data);
       dispatch(
         cartSlice.actions.replaceItem({
           items: data.items,
-          totalQuantity: data.totalQuantity,
+          totalQuantity: totQty,
         })
       );
     };
@@ -46,7 +52,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (!isInitial) {
+    if (isChanged) {
       fetch(
         "https://advanced-redux-b752b-default-rtdb.firebaseio.com/redux.json",
         {
@@ -58,7 +64,7 @@ function App() {
     } else {
       isInitial = false;
     }
-  }, [cartItems, totQty]);
+  }, [cartItems, totQty, isChanged]);
 
   return (
     <div>
